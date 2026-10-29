@@ -1,0 +1,3 @@
+Calorimetro ideale - temperatura raggiunta dal sistema a 600 sec = 294.996
+
+Calorimetro reale - temperatura raggiunta dal sistema a 600 sec = 279.796

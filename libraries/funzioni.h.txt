@@ -1,0 +1,81 @@
+#include <iostream>
+#include <fstream> 
+
+#include <vector>
+
+using namespace std;
+
+template <typename T> void Print( const vector<T> & v ) {
+  for (unsigned int i=0; i<v.size(); i++) cout << v[i] << endl;
+};
+
+template <typename T> void Print( const vector<T> & v  , string filename ) {
+ 
+	ofstream out(filename);
+			if(!out){
+				cerr<<"Non posso creare il file "<<filename<<endl;
+				return; //volendo puoi anche non metterlo
+			}
+			
+			for(int k=0; k<v.size(); k++) out<<v[k]<<endl;
+			out.close();
+			return;
+
+};
+
+template <typename T> vector<T> Read( unsigned int N, string filename ) {
+
+  vector<T> v;
+
+	ifstream in(filename);
+
+	// assert( in && "ouput file does not exist");
+
+	if(!in){
+		cout<<"Cannot open file"<<filename<<endl;
+		exit(11);
+	}else{
+		for(int i=0; i<N; i++){
+			T val=0;
+			in>>val;
+			v.push_back(val);
+			// assert( (!in.eof()) && "ouput file does not exist");
+			if (in.eof()){
+				cout<<"End of file reach exiting"<<endl;
+				exit(11);
+			}
+		}
+	}
+
+  return v;  
+
+};
+
+// =====================================================================
+
+template <typename T> double CalcolaMedia( const vector<T> & v) {
+
+ T accumulo = 0;
+
+  if ( v.size() == 0 ) return accumulo;
+
+  for ( int k = 0 ; k < v.size() ; k++ ) { 
+    accumulo += v[k] ;
+  }
+  
+  return double (accumulo / ( v.size() )) ;
+
+};
+
+template <typename T> double CalcolaDevStd(const vector<T> & v){
+  
+  T media = CalcolaMedia(v);
+
+	T varianza=0;
+
+	for(int k=0; k<v.size(); k++){
+      varianza += (media-v[k])*(media-v[k]);
+    }
+
+    return double (sqrt(varianza/(v.size()-1)));
+}

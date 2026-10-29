@@ -1,0 +1,38 @@
+1) Andamento dell'errore in funzione del numero di punti - metodo midpoint
+n punti    	errore
+2       	0.227722
+4       	0.058116
+8       	0.0145996
+16       	0.00365426
+32       	0.000913836
+64       	0.000228476
+128       	5.71201e-05
+256       	1.42801e-05
+512       	3.57003e-06
+1024       	8.92507e-07
+
+2) metodo midpoint - noto l'andamento dell'errore in funzione del passo h come come err=k1*h^k2 i valori k1 e k2 sono 
+k1 = 0.333479
+k2 = 1.97464
+
+3) Andamento dell'errore in funzione del numero di punti - metodo midright
+n punti    	errore
+2       	2.02468
+4       	0.898477
+8       	0.42018
+16       	0.20279
+32       	0.0995681
+64       	0.0493271
+128       	0.0245493
+256       	0.0122461
+512       	0.00611591
+1024       	0.00305617
+
+4) metodo midright - noto l'andamento dell'errore in funzione del passo h come come err=k1*h^k2 i valori k1 e k2 sono 
+k1 = 2.514
+k2 = 1.13669
+
+5) errore del calcolo dell'integrale ripetuto 1000 volte con 16 estrazioni = 0.412848
+
+6) numero di punti necessari al metodo della media per ottenere la stessa precisione che si ottiene
+con il metodo del midpoint a 16 punti = 232646
